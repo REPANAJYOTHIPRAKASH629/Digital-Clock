@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Digital Clock</title>
+	<link rel="stylesheet" href="MDB/css/bootstrap.css">
+	<link rel="stylesheet" href="MDB/css/mdb.css">
+	<link rel="stylesheet" href="FA/fa/css/all.css">
+	<style>
+		#one
+		{
+			width: 600px;
+			height: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div class="row mt-5">
+		<div class="col=md-5 m-auto">
+			<div class="card">
+				<div class="card-body bg-info text-center text-white" id="one">
+					<h1>INDIAN DIGITAL CLOCK</h1>
+					<h2 id="time">Time</h2>
+					<h5 id="date">Date</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- script code -->
+	<script>
+		let timeTag=document.getElementById('time');
+		let dateTag=document.getElementById('date');
+		let indianWatch=()=>
+		{
+			let options={timezone:'asia/kolkata'};
+			let currentTime=new Date().toLocaleTimeString('US',options);
+			timeTag.innerText=currentTime;
+			let currentDate=new Date().toLocaleDateString('US',options);
+			dateTag.innerText=currentDate;
+		}
+		//indianWatch()
+		setInterval(indianWatch,1000)
+	</script>
+</body>
+</html>
